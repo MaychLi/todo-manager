@@ -59,7 +59,8 @@ export default function BasicStack({tasks}: BasicProps) {
 	};
 	
 	useEffect(() => {
-		setTaskList(prevTasks => updateTaskList(prevTasks))
+		setTaskList(prevTasks => updateTaskList(prevTasks));
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [tasks]);
 
 

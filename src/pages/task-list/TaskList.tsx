@@ -27,7 +27,7 @@ export const TaskList: React.FC = () => {
 		if (jsonStatus === 'success') {
 			dispatch(fetchTasks());
 		}
-	}, [jsonStatus]);
+	}, [jsonStatus, dispatch]);
 
 	const combinedTasks: Todo[] = [...jsonTodo, ...tasks];
 	return (
