@@ -10,9 +10,9 @@ export default function TextFieldHiddenLabel({ addTask }: addTaskProps) {
 	const [value, setValue] = useState<string>('');
 
 	const onChangeEvent = (event: React.KeyboardEvent) => {
-		if (event.key === 'Enter' && value) {
+		if (event.key === 'Enter' && value.trim() !== '') {
 			event.preventDefault();
-			addTask(value);
+			addTask(value.trim());
 			setValue('');
 		}
 	};
