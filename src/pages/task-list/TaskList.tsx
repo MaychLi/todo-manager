@@ -12,10 +12,16 @@ export const TaskList: React.FC = () => {
 	const dispatch = useAppDispatch();
 	const jsonTodo = useSelector(selectItems);
 	const jsonStatus = useSelector(selectStatus);
-	const [tasks, setTasks] = useState<string[]>([]);
+	const [tasks, setTasks] = useState<Todo[]>([]);
 	
 	const addTask = (task: string) => {
-		setTasks(prevTasks => [...prevTasks, task]);
+		const newTask = {
+			id: Date.now(),
+			todo: task,
+			completed: false,
+			userId: 1
+		};
+		setTasks(prevTasks => [...prevTasks, newTask]);
 	};
 	useEffect(() => {
 		if (jsonStatus === 'success') {
@@ -23,7 +29,7 @@ export const TaskList: React.FC = () => {
 		}
 	}, [jsonStatus]);
 
-	const combinedTasks = [...jsonTodo.map((todo: Todo) => todo.todo), ...tasks];
+	const combinedTasks: Todo[] = [...jsonTodo, ...tasks];
 	return (
 		<div className='container'>
 			<div className={styles.wrapper}>
