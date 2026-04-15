@@ -36,9 +36,7 @@ export const TaskList: React.FC = () => {
 				<main className={styles.taskWrapper}>
 					<section className={styles.block}>
 						<h1 className={styles.header}>todos</h1>
-						<div>
-							<TaskInput addTask={addTask} />
-						</div>
+						<TaskInput addTask={addTask} />
 						<ul>
 							<li>
 								<TaskItem tasks={combinedTasks} />

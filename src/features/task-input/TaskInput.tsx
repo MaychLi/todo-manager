@@ -18,21 +18,32 @@ export default function TextFieldHiddenLabel({ addTask }: addTaskProps) {
 	};
 
 	return (
-		<Stack component='form' sx={{width: '75ch'}} spacing={2} noValidate autoComplete='off'>
+		<Stack component='form' sx={{ width: '100%' }} spacing={2} noValidate autoComplete='off'>
 			<TextField
+				fullWidth
+				multiline
 				hiddenLabel
 				id='filled-hidden-label-normal'
-				defaultValue=''
 				variant='filled'
 				placeholder='What needs to be done?'
 				value={value}
 				onChange={e => setValue(e.target.value)}
 				onKeyDown={onChangeEvent}
 				sx={{
-					'& .MuiInputBase-input': {
-						color: '##00000099',
-						backgroundColor: '#FEFEFE',
+					'& .MuiInputBase-root': {
+						width: '100%',
+						backgroundColor: '#FEFEFE', 
+						boxSizing: 'border-box',
+						alignItems: 'flex-start',
+						padding: '16px 14px', 
 					},
+
+					'& .MuiInputBase-input': {
+						color: '#00000099',
+						textAlign: 'center',
+						padding: 0, 
+					},
+
 					'& .MuiInputBase-input::placeholder': {
 						color: '#E9E9E9',
 					},

@@ -60,7 +60,6 @@ export default function BasicStack({tasks}: BasicProps) {
 	
 	useEffect(() => {
 		setTaskList(prevTasks => updateTaskList(prevTasks));
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [tasks]);
 
 
@@ -82,7 +81,7 @@ export default function BasicStack({tasks}: BasicProps) {
 	});
 
 	return (
-		<Box sx={{ width: '75ch' }}>
+		<Box sx={{ width: '100%'}}>
 			<Stack spacing={2}>
 				{filteredTasks.map(task => (
 					<Item key={task.id}>
