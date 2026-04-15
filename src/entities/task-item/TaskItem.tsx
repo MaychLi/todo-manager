@@ -60,7 +60,7 @@ export default function BasicStack({tasks}: BasicProps) {
 	
 	useEffect(() => {
 		setTaskList(prevTasks => updateTaskList(prevTasks));
-	}, [tasks]);
+	}, [tasks, updateTaskList]);
 
 
 	const onChangeClick = (id: number) => {
